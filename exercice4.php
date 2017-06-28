@@ -11,26 +11,14 @@ catch (Exception $e)
 }
 
 
-// EXERCICE 1 :
+// EXERCICE 4 :
 
 // RECUP
-$reponse = $bdd->query('SELECT * FROM clients');
+$reponse = $bdd->query('SELECT * FROM clients INNER JOIN cards ON cards.cardNumber=clients.cardNumber WHERE cardTypesId=1');
 
 // AFFICHAGE
 while($donnees=$reponse->fetch()){
-  echo '<p>Nom = ' . $donnees['lastName'] . ' - ' . $donnees['firstName'];
+  echo '<p>Nom : ' . $donnees['lastName'] . ' - Prenom : ' . $donnees['firstName'];
 }
-
-
-// EXERCICE 2 :
-
-// RECUP
-$reponse = $bdd->query('SELECT * FROM showTypes');
-
-// AFFICHAGE
-while($donnes=$reponse->fetch()){
-  echo '<p>Types = ' . $donnes['type'];
-}
-
 
 ?>

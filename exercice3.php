@@ -11,26 +11,14 @@ catch (Exception $e)
 }
 
 
-// EXERCICE 1 :
+// EXERCICE 3 :
 
 // RECUP
-$reponse = $bdd->query('SELECT * FROM clients');
+$reponse = $bdd->query('SELECT * FROM clients LIMIT 20');
 
 // AFFICHAGE
 while($donnees=$reponse->fetch()){
   echo '<p>Nom = ' . $donnees['lastName'] . ' - ' . $donnees['firstName'];
 }
-
-
-// EXERCICE 2 :
-
-// RECUP
-$reponse = $bdd->query('SELECT * FROM showTypes');
-
-// AFFICHAGE
-while($donnes=$reponse->fetch()){
-  echo '<p>Types = ' . $donnes['type'];
-}
-
 
 ?>

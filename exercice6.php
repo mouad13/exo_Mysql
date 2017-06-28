@@ -11,26 +11,14 @@ catch (Exception $e)
 }
 
 
-// EXERCICE 1 :
+// EXERCICE 6 :
 
 // RECUP
-$reponse = $bdd->query('SELECT * FROM clients');
+$reponse = $bdd->query('SELECT * FROM shows ORDER BY title ASC');
 
 // AFFICHAGE
 while($donnees=$reponse->fetch()){
-  echo '<p>Nom = ' . $donnees['lastName'] . ' - ' . $donnees['firstName'];
+  echo '<p>Spectacle = ' . $donnees['title'] . ' - artiste : ' . $donnees['performer'].' - data :' .$donnees['date'] .' - à :' .$donnees['startTime'];
 }
-
-
-// EXERCICE 2 :
-
-// RECUP
-$reponse = $bdd->query('SELECT * FROM showTypes');
-
-// AFFICHAGE
-while($donnes=$reponse->fetch()){
-  echo '<p>Types = ' . $donnes['type'];
-}
-
 
 ?>
